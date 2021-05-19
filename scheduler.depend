@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1536958533 source:c:\users\joaoc\onedrive\documentos\scheduler\scheduler\cpu.c
+	<stdio.h>
+	"task.h"
+
+1536958533 c:\users\joaoc\onedrive\documentos\scheduler\scheduler\task.h
+
+1620869757 source:c:\users\joaoc\onedrive\documentos\scheduler\scheduler\driver.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"task.h"
+	"list.h"
+	"schedulers.h"
+
+1536958533 c:\users\joaoc\onedrive\documentos\scheduler\scheduler\list.h
+	"task.h"
+
+1536958533 c:\users\joaoc\onedrive\documentos\scheduler\scheduler\schedulers.h
+
+1536958533 source:c:\users\joaoc\onedrive\documentos\scheduler\scheduler\list.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"list.h"
+	"task.h"
+
