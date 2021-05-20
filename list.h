@@ -11,5 +11,6 @@ struct node {
 
 // insert and delete operations.
 void insert(struct node **head, Task *task);
+void insereFim(struct node *head, Task *newTask);
 void delete(struct node **head, Task *task);
 void traverse(struct node *head);

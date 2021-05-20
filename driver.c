@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
     char *name;
     int priority;
     int burst;
-
+    int QtdTaks = 0;
     in = fopen(argv[1],"r");
 
     while (fgets(task,SIZE,in) != NULL) {
@@ -36,15 +36,16 @@ int main(int argc, char *argv[])
         burst = atoi(strsep(&temp,","));
 
         // add the task to the scheduler's list of tasks
-        add(name,priority,burst);
-
+        
+        add(name,priority,burst,QtdTaks+1 );
+        QtdTaks ++;
         free(temp);
     }
-
+    printf("Todas as tarefas executadas com sucesso!");
     fclose(in);
 
     // invoke the scheduler
-    schedule();
+    schedule(QtdTaks);
 
     return 0;
 }
