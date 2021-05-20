@@ -48,8 +48,14 @@ void traverse(struct node *head) {
     struct node *temp;
     temp = head;
 
-    while (temp != NULL) {
+    while (1) {
         printf("[%s] [%d] [%d]\n",temp->task->name, temp->task->priority, temp->task->burst);
-        temp = temp->next;
+        if (temp->next == NULL){
+            break;
+        }else{
+            
+            temp = temp->next;
+        }
+        
     }
 }

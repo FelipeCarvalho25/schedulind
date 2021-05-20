@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
     FILE *in;
     char *temp;
     char task[SIZE];
-
+    head = malloc(sizeof(struct node));
     char *name;
     int priority;
     int burst;

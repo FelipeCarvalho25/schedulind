@@ -7,17 +7,13 @@
 #include <string.h>
 
 
-struct node *head ;
+
 // representation of a task
 
 void add(char *name, int priority, int burst){
-    printf("TESTE");
-    head = malloc(sizeof(struct node));
     
     struct task *newTask;
-    printf("TESTE");
     newTask = (struct task*) malloc(sizeof( struct task));
-    printf("TESTE");
     newTask->name = name;
     newTask->priority = priority;
     newTask->burst = burst;
@@ -29,4 +25,5 @@ void add(char *name, int priority, int burst){
 void schedule(){
     
     traverse(head);
+    printf("voltei");
 }

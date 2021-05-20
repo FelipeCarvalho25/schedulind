@@ -4,7 +4,7 @@
 
 #ifndef TASK_H
 #define TASK_H
-
+struct node *head ;
 // representation of a task
 typedef struct task {
     char *name;
