@@ -61,6 +61,18 @@ void delete(struct node **head, Task *task) {
         prev->next = temp->next;
     }
 }
+int menorPrioridade(struct node *head){
+    struct node *temp;
+    temp = head;
+    int menor = 50;
+    while (temp->task != NULL) {
+        if(temp->task->priority < menor){
+            menor = temp->task->priority ;
+        }
+        temp = temp->next;        
+    }
+    return menor;
+}
 
 // traverse the list
 void traverse(struct node *head) {
