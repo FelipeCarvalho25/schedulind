@@ -22,8 +22,15 @@ int main(int argc, char *argv[])
     FILE *in;
     char *temp;
     char task[SIZE];
-    head = malloc(sizeof(struct node));
+    //instancia o ponteiro da lista de aptos
+    head = (node *) malloc(sizeof(node));
+    //instancia o ponteiro da lista de log de executados
+    executados = (node *) malloc(sizeof(node));
     char *name;
+    //inicia lista do aptos
+    iniciaLista(head);
+    //inicia lista de executados
+    iniciaLista(executados);
     int priority;
     int burst;
     int QtdTaks = 0;
@@ -35,17 +42,20 @@ int main(int argc, char *argv[])
         priority = atoi(strsep(&temp,","));
         burst = atoi(strsep(&temp,","));
 
-        // add the task to the scheduler's list of tasks
-        
+        // add the task to the scheduler's list of tasks        
         add(name,priority,burst,QtdTaks+1 );
+        //incrementa quantidade de tasks
         QtdTaks ++;
         free(temp);
     }
-    printf("Todas as tarefas executadas com sucesso!");
+    
     fclose(in);
 
     // invoke the scheduler
     schedule(QtdTaks);
-
+    //printa mensagem de sucesso e log de exeução
+    printf("Todas as tarefas executadas com sucesso!\n");
+    printf("Log de execução:\n");
+    exibe(executados);    
     return 0;
 }
